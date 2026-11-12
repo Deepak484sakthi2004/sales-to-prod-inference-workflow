@@ -1,0 +1,68 @@
+# Alternative one command:  SIM_REAL_ANCHOR=$(date +%s) docker compose up --build
+# Gemini:   put GEMINI_API_KEY in .env (docker compose reads it). Without it mail waits unread.
+# MongoDB:  S2P_STORE=mongo MONGODB_URI='mongodb+srv://...' docker compose up      (Atlas)
+#           S2P_STORE=mongo MONGODB_URI=mongodb://mongo:27017 docker compose --profile mongo up   (local MongoDB)
+x-standin: &standin
+  image: s2p:latest
+  pull_policy: never
+  environment:
+    SIM_START: "2026-11-11T09:30:00+05:30"
+    SIM_REAL_ANCHOR: "${SIM_REAL_ANCHOR:-0}"
+
+services:
+  mailbox:
+    <<: *standin
+    build: .
+    command: ["java", "-jar", "/app/standins.jar", "--spring.profiles.active=mailbox"]
+    ports: ["8081:8081"]
+  crm:
+    <<: *standin
+    command: ["java", "-jar", "/app/standins.jar", "--spring.profiles.active=crm"]
+    ports: ["8082:8082"]
+    depends_on: [mailbox]
+  erp:
+    <<: *standin
+    command: ["java", "-jar", "/app/standins.jar", "--spring.profiles.active=erp"]
+    ports: ["8083:8083"]
+    depends_on: [mailbox]
+  planning:
+    <<: *standin
+    command: ["java", "-jar", "/app/standins.jar", "--spring.profiles.active=planning"]
+    ports: ["8084:8084"]
+    depends_on: [mailbox]
+  statusfeed:
+    <<: *standin
+    command: ["java", "-jar", "/app/standins.jar", "--spring.profiles.active=statusfeed"]
+    ports: ["8085:8085"]
+    depends_on: [mailbox]
+  core:
+    <<: *standin
+    command: ["java", "-jar", "/app/core.jar"]
+    ports: ["8080:8080"]
+    environment:
+      SIM_START: "2026-11-11T09:30:00+05:30"
+      SIM_REAL_ANCHOR: "${SIM_REAL_ANCHOR:-0}"
+      MAILBOX_URL: http://mailbox:8081
+      CRM_URL: http://crm:8082
+      ERP_URL: http://erp:8083
+      PLANNING_URL: http://planning:8084
+      STATUSFEED_URL: http://statusfeed:8085
+      DECISION_LOG: /app/data/decision-log.jsonl
+      AI_ENABLED: "${AI_ENABLED:-true}"
+      AI_URL: http://ai:8090
+      S2P_STORE: "${S2P_STORE:-memory}"
+      MONGODB_URI: "${MONGODB_URI:-}"
+      MONGODB_DATABASE: "${MONGODB_DATABASE:-s2p}"
+    depends_on: [crm, erp, planning, statusfeed, ai]
+  ai:
+    build: ./ai-service
+    image: s2p-ai:latest
+    ports: ["8090:8090"]
+    environment:
+      GEMINI_API_KEY: "${GEMINI_API_KEY:-}"
+      GEMINI_MODEL: "${GEMINI_MODEL:-gemini-3.8-flash}"
+      GEMINI_THINKING_LEVEL: "${GEMINI_THINKING_LEVEL:-LOW}"
+  mongo:
+    image: mongo:8.0
+    profiles: ["mongo"]
+    ports: ["27017:27017"]

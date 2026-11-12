@@ -1,0 +1,6 @@
+**/target
+logs
+data
+.pids
+.git
+ai-service

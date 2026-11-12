@@ -1,0 +1,11 @@
+**/target/
+##logs/
+##data/
+.pids
+##docs/RUN_LOG.live.txt
+.idea/
+*.iml
+ai-service/.venv/
+**/__pycache__/
+.pytest_cache/
+.env

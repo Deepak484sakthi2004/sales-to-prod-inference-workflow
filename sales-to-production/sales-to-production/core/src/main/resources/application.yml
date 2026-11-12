@@ -1,0 +1,59 @@
+server:
+  port: ${PORT:8080}
+
+s2p:
+  sources:
+    mailbox: ${MAILBOX_URL:http://localhost:8081}
+    crm: ${CRM_URL:http://localhost:8082}
+    erp: ${ERP_URL:http://localhost:8083}
+    planning: ${PLANNING_URL:http://localhost:8084}
+    status-feed: ${STATUSFEED_URL:http://localhost:8085}
+  sim:
+    start: ${SIM_START:2026-11-11T09:30:00+05:30}
+    real-anchor-epoch: ${SIM_REAL_ANCHOR:0}
+  poll:
+    enabled: ${POLL_ENABLED:true}
+    interval-ms: ${POLL_INTERVAL_MS:30000}
+  decision-log: ${DECISION_LOG:data/decision-log.jsonl}
+  # Where the core keeps its own records (decision log, actions, suggestions, enquiry ledger).
+  # memory (default): nothing to install, lost on restart.  mongo: MongoDB Atlas or any MongoDB 5+ server.
+  store:
+    type: ${S2P_STORE:memory}
+    mongo:
+      # Atlas: Database > Connect > Drivers, e.g. mongodb+srv://<user>:<password>@cluster0.abcde.mongodb.net/?retryWrites=true&w=majority
+      uri: ${MONGODB_URI:}
+      database: ${MONGODB_DATABASE:s2p}
+  # The language model. The Python AI service (ai-service/, Gemini behind it) reads mail, questions and CRM notes. The
+  # core checks everything it returns; if it is off or unreachable, mail waits unread and the answer says so.
+  ai:
+    enabled: ${AI_ENABLED:true}
+    url: ${AI_URL:http://localhost:8090}
+    timeout-ms: ${AI_TIMEOUT_MS:20000}
+  # Change a requirement here (or with environment variables) without touching code.
+  policy:
+    min-slack-working-days: ${MIN_SLACK_DAYS:0}
+    allow-alternate-lines: true
+    quote-validity-days: 15
+    planning-sla-minutes: 30
+    erp-sla-minutes: 15
+    commit-limit-minutes: 120
+    proactive-notice-goodwill-reduction: 0.4
+    goodwill-pct-per-late-day:
+      A: 1.5
+      B: 0.75
+      C: 0.4
+    enabled-rules: [R1, R2, R3, R4]
+
+spring:
+  autoconfigure:
+    # The core opens MongoDB itself, only when s2p.store.type=mongo. Without this, Spring Boot would try localhost:27017.
+    exclude: org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration
+  mvc:
+    format:
+      date: iso
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+      write-durations-as-timestamps: false
+    deserialization:
+      adjust-dates-to-context-time-zone: false

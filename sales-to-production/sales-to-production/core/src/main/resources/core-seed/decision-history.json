@@ -1,0 +1,245 @@
+{
+ "decisions": [
+  {
+   "id": "DEC-0412",
+   "at": "D-7T10:12",
+   "kind": "CUSTOMER_STATUS_PUBLISHED",
+   "actor": "system",
+   "accountId": "ACC-KAV",
+   "orderId": "SO-1038",
+   "statement": "Stage SCHEDULED; estimate Wed 18 Nov; message: Your order is scheduled for production.",
+   "dateStated": "D+7",
+   "qtyStated": 280,
+   "basis": [
+    "WO-5512 on L2: 200 to make, planned finish Mon 16 Nov",
+    "80 x CPL-60-FX reserved from stock (RES-301)",
+    "QC 1 working day, transit 1 day to Coimbatore",
+    "Slack 0 working days against the committed Wed 18 Nov"
+   ],
+   "sourceVersions": {
+    "ERP": 1984,
+    "PLANNING": 412,
+    "CRM": 488,
+    "MAILBOX": 96
+   },
+   "dataAge": {
+    "ERP": "3 min",
+    "PLANNING": "6 min",
+    "CRM": "40 min",
+    "MAILBOX": "1 min"
+   },
+   "confidence": 0.66,
+   "approvedBy": "Priya Natarajan (PLANNER)",
+   "actionId": "A-H017",
+   "policyVersion": "2026-11-01"
+  },
+  {
+   "id": "DEC-0440",
+   "at": "D-1T16:10",
+   "kind": "CUSTOMER_STATUS_PUBLISHED",
+   "actor": "system",
+   "accountId": "ACC-COR",
+   "orderId": "SO-1041",
+   "statement": "Stage IN_PRODUCTION; estimate Mon 16 Nov; message: Your order is in production.",
+   "dateStated": "D+5",
+   "qtyStated": 300,
+   "basis": [
+    "WO-5520 on L2: 240 to make, planned finish Fri 13 Nov",
+    "QC 1 working day, transit 1 day to Chennai"
+   ],
+   "sourceVersions": {
+    "ERP": 1999,
+    "PLANNING": 449
+   },
+   "dataAge": {
+    "ERP": "2 min",
+    "PLANNING": "5 min"
+   },
+   "confidence": 0.84,
+   "ruleId": "R1",
+   "approvedBy": "rule R1 (approved in advance by A. Raman (Head of Operations))",
+   "actionId": "A-H031",
+   "policyVersion": "2026-11-01"
+  },
+  {
+   "id": "DEC-0300",
+   "at": "D-72T11:00",
+   "kind": "CUSTOMER_EMAIL_SENT",
+   "actor": "system",
+   "accountId": "ACC-SUND",
+   "orderId": "SO-0950",
+   "statement": "Quoted delivery date confirmed to customer",
+   "dateStated": "D-60",
+   "qtyStated": 100,
+   "basis": [
+    "historical record"
+   ],
+   "confidence": 0.7,
+   "approvedBy": "sales rep",
+   "policyVersion": "2026-10-01",
+   "actualDelivery": "D-60"
+  },
+  {
+   "id": "DEC-0301",
+   "at": "D-67T11:00",
+   "kind": "CUSTOMER_EMAIL_SENT",
+   "actor": "system",
+   "accountId": "ACC-KAV",
+   "orderId": "SO-0951",
+   "statement": "Quoted delivery date confirmed to customer",
+   "dateStated": "D-55",
+   "qtyStated": 120,
+   "basis": [
+    "historical record"
+   ],
+   "confidence": 0.7,
+   "approvedBy": "sales rep",
+   "policyVersion": "2026-10-01",
+   "actualDelivery": "D-54"
+  },
+  {
+   "id": "DEC-0302",
+   "at": "D-62T11:00",
+   "kind": "CUSTOMER_EMAIL_SENT",
+   "actor": "system",
+   "accountId": "ACC-COR",
+   "orderId": "SO-0952",
+   "statement": "Quoted delivery date confirmed to customer",
+   "dateStated": "D-50",
+   "qtyStated": 140,
+   "basis": [
+    "historical record"
+   ],
+   "confidence": 0.7,
+   "approvedBy": "sales rep",
+   "policyVersion": "2026-10-01",
+   "actualDelivery": "D-50"
+  },
+  {
+   "id": "DEC-0303",
+   "at": "D-56T11:00",
+   "kind": "CUSTOMER_EMAIL_SENT",
+   "actor": "system",
+   "accountId": "ACC-DEC",
+   "orderId": "SO-0953",
+   "statement": "Quoted delivery date confirmed to customer",
+   "dateStated": "D-44",
+   "qtyStated": 160,
+   "basis": [
+    "historical record"
+   ],
+   "confidence": 0.7,
+   "approvedBy": "sales rep",
+   "policyVersion": "2026-10-01",
+   "actualDelivery": "D-44"
+  },
+  {
+   "id": "DEC-0304",
+   "at": "D-52T11:00",
+   "kind": "CUSTOMER_EMAIL_SENT",
+   "actor": "system",
+   "accountId": "ACC-NIL",
+   "orderId": "SO-0954",
+   "statement": "Quoted delivery date confirmed to customer",
+   "dateStated": "D-40",
+   "qtyStated": 180,
+   "basis": [
+    "historical record"
+   ],
+   "confidence": 0.7,
+   "approvedBy": "sales rep",
+   "policyVersion": "2026-10-01",
+   "actualDelivery": "D-38"
+  },
+  {
+   "id": "DEC-0305",
+   "at": "D-45T11:00",
+   "kind": "CUSTOMER_EMAIL_SENT",
+   "actor": "system",
+   "accountId": "ACC-GOD",
+   "orderId": "SO-0955",
+   "statement": "Quoted delivery date confirmed to customer",
+   "dateStated": "D-33",
+   "qtyStated": 200,
+   "basis": [
+    "historical record"
+   ],
+   "confidence": 0.7,
+   "approvedBy": "sales rep",
+   "policyVersion": "2026-10-01",
+   "actualDelivery": "D-33"
+  },
+  {
+   "id": "DEC-0306",
+   "at": "D-39T11:00",
+   "kind": "CUSTOMER_EMAIL_SENT",
+   "actor": "system",
+   "accountId": "ACC-SUND",
+   "orderId": "SO-0956",
+   "statement": "Quoted delivery date confirmed to customer",
+   "dateStated": "D-27",
+   "qtyStated": 220,
+   "basis": [
+    "historical record"
+   ],
+   "confidence": 0.7,
+   "approvedBy": "sales rep",
+   "policyVersion": "2026-10-01",
+   "actualDelivery": "D-27"
+  },
+  {
+   "id": "DEC-0307",
+   "at": "D-33T11:00",
+   "kind": "CUSTOMER_EMAIL_SENT",
+   "actor": "system",
+   "accountId": "ACC-KAV",
+   "orderId": "SO-0957",
+   "statement": "Quoted delivery date confirmed to customer",
+   "dateStated": "D-21",
+   "qtyStated": 240,
+   "basis": [
+    "historical record"
+   ],
+   "confidence": 0.7,
+   "approvedBy": "sales rep",
+   "policyVersion": "2026-10-01",
+   "actualDelivery": "D-20"
+  },
+  {
+   "id": "DEC-0308",
+   "at": "D-26T11:00",
+   "kind": "CUSTOMER_EMAIL_SENT",
+   "actor": "system",
+   "accountId": "ACC-COR",
+   "orderId": "SO-0958",
+   "statement": "Quoted delivery date confirmed to customer",
+   "dateStated": "D-14",
+   "qtyStated": 260,
+   "basis": [
+    "historical record"
+   ],
+   "confidence": 0.7,
+   "approvedBy": "sales rep",
+   "policyVersion": "2026-10-01",
+   "actualDelivery": "D-14"
+  },
+  {
+   "id": "DEC-0309",
+   "at": "D-21T11:00",
+   "kind": "CUSTOMER_EMAIL_SENT",
+   "actor": "system",
+   "accountId": "ACC-DEC",
+   "orderId": "SO-0959",
+   "statement": "Quoted delivery date confirmed to customer",
+   "dateStated": "D-9",
+   "qtyStated": 280,
+   "basis": [
+    "historical record"
+   ],
+   "confidence": 0.7,
+   "approvedBy": "sales rep",
+   "policyVersion": "2026-10-01",
+   "actualDelivery": "D-9"
+  }
+ ]
+}

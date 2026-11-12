@@ -1,0 +1,70 @@
+{
+  "products": [
+    { "sku": "CPL-45-FX", "name": "Flexible Jaw Coupling 45mm", "family": "COUPLING", "sizeMm": 45, "variant": "FLEXIBLE", "unitCost": 1050, "bom": { "RM-FORG-45": 1, "RM-INS-45": 1 } },
+    { "sku": "CPL-60-FX", "name": "Flexible Jaw Coupling 60mm", "family": "COUPLING", "sizeMm": 60, "variant": "FLEXIBLE", "unitCost": 1390, "bom": { "RM-FORG-60": 1, "RM-INS-60": 1 } },
+    { "sku": "CPL-60-RG", "name": "Rigid Sleeve Coupling 60mm", "family": "COUPLING", "sizeMm": 60, "variant": "RIGID", "unitCost": 1120, "bom": { "RM-FORG-60": 1 } },
+    { "sku": "CPL-80-FX", "name": "Flexible Jaw Coupling 80mm", "family": "COUPLING", "sizeMm": 80, "variant": "FLEXIBLE", "unitCost": 2450, "bom": { "RM-FORG-80": 1, "RM-INS-80": 1 } },
+    { "sku": "FLG-100-WN", "name": "Weld Neck Flange 100mm", "family": "FLANGE", "sizeMm": 100, "variant": "WELD_NECK", "unitCost": 1700, "bom": { "RM-PLT-100": 1 } },
+    { "sku": "FLG-150-WN", "name": "Weld Neck Flange 150mm", "family": "FLANGE", "sizeMm": 150, "variant": "WELD_NECK", "unitCost": 2780, "bom": { "RM-PLT-150": 1 } }
+  ],
+  "priceLists": [
+    { "id": "PL-STD-26", "accountId": null, "sku": "CPL-45-FX", "unitPrice": 1420, "currency": "INR", "validFrom": "D-224", "validTo": "D+140", "minQty": 1 },
+    { "id": "PL-STD-26", "accountId": null, "sku": "CPL-60-FX", "unitPrice": 1980, "currency": "INR", "validFrom": "D-224", "validTo": "D+140", "minQty": 1 },
+    { "id": "PL-STD-26", "accountId": null, "sku": "CPL-60-RG", "unitPrice": 1560, "currency": "INR", "validFrom": "D-224", "validTo": "D+140", "minQty": 1 },
+    { "id": "PL-STD-26", "accountId": null, "sku": "CPL-80-FX", "unitPrice": 2950, "currency": "INR", "validFrom": "D-224", "validTo": "D+140", "minQty": 1 },
+    { "id": "PL-STD-26", "accountId": null, "sku": "FLG-100-WN", "unitPrice": 2240, "currency": "INR", "validFrom": "D-224", "validTo": "D+140", "minQty": 1 },
+    { "id": "PL-STD-26", "accountId": null, "sku": "FLG-150-WN", "unitPrice": 3600, "currency": "INR", "validFrom": "D-224", "validTo": "D+140", "minQty": 1 },
+    { "id": "PL-SUND-H2", "accountId": "ACC-SUND", "sku": "CPL-60-FX", "unitPrice": 1840, "currency": "INR", "validFrom": "D-41", "validTo": "D+19", "minQty": 100 },
+    { "id": "PL-SUND-H2", "accountId": "ACC-SUND", "sku": "CPL-45-FX", "unitPrice": 1330, "currency": "INR", "validFrom": "D-41", "validTo": "D+19", "minQty": 100 },
+    { "id": "PL-KAV-26", "accountId": "ACC-KAV", "sku": "CPL-60-FX", "unitPrice": 1860, "currency": "INR", "validFrom": "D-41", "validTo": "D+50", "minQty": 50 },
+    { "id": "PL-DEC-H1", "accountId": "ACC-DEC", "sku": "CPL-80-FX", "unitPrice": 2780, "currency": "INR", "validFrom": "D-194", "validTo": "D-5", "minQty": 25 }
+  ],
+  "stock": [
+    { "sku": "CPL-60-FX", "kind": "FG", "onHand": 120, "reserved": 80 },
+    { "sku": "CPL-60-RG", "kind": "FG", "onHand": 60, "reserved": 60 },
+    { "sku": "CPL-45-FX", "kind": "FG", "onHand": 300, "reserved": 150 },
+    { "sku": "CPL-80-FX", "kind": "FG", "onHand": 20, "reserved": 20 },
+    { "sku": "FLG-100-WN", "kind": "FG", "onHand": 75, "reserved": 30 },
+    { "sku": "FLG-150-WN", "kind": "FG", "onHand": 10, "reserved": 0 },
+    { "sku": "RM-FORG-60", "kind": "RM", "onHand": 150, "reserved": 60, "inbound": [ { "ref": "PO-7781", "qty": 300, "expectedDate": "D+2", "supplier": "Salem Forgings", "supplierOnTimeRate": 0.8 } ] },
+    { "sku": "RM-INS-60", "kind": "RM", "onHand": 500, "reserved": 140 },
+    { "sku": "RM-FORG-45", "kind": "RM", "onHand": 400, "reserved": 200 },
+    { "sku": "RM-INS-45", "kind": "RM", "onHand": 600, "reserved": 200 },
+    { "sku": "RM-FORG-80", "kind": "RM", "onHand": 100, "reserved": 40, "inbound": [ { "ref": "PO-7785", "qty": 150, "expectedDate": "D+5", "supplier": "Salem Forgings", "supplierOnTimeRate": 0.8 } ] },
+    { "sku": "RM-INS-80", "kind": "RM", "onHand": 200, "reserved": 40 },
+    { "sku": "RM-PLT-100", "kind": "RM", "onHand": 200, "reserved": 50 },
+    { "sku": "RM-PLT-150", "kind": "RM", "onHand": 40, "reserved": 0, "inbound": [ { "ref": "PO-7790", "qty": 100, "expectedDate": "D+6", "supplier": "Vizag Steel Stockists", "supplierOnTimeRate": 0.7 }, { "ref": "PO-7795", "qty": 120, "expectedDate": "D+12", "supplier": "Vizag Steel Stockists", "supplierOnTimeRate": 0.7 } ] }
+  ],
+  "reservations": [
+    { "id": "RES-301", "sku": "CPL-60-FX", "qty": 80, "orderId": "SO-1038", "idempotencyKey": "seed-301" },
+    { "id": "RES-302", "sku": "CPL-45-FX", "qty": 150, "orderId": "SO-1040", "idempotencyKey": "seed-302" },
+    { "id": "RES-303", "sku": "CPL-60-RG", "qty": 60, "orderId": "SO-1043", "idempotencyKey": "seed-303" },
+    { "id": "RES-304", "sku": "CPL-80-FX", "qty": 20, "orderId": "SO-1036", "idempotencyKey": "seed-304" },
+    { "id": "RES-305", "sku": "FLG-100-WN", "qty": 30, "orderId": "SO-1042", "idempotencyKey": "seed-305" }
+  ],
+  "quotations": [
+    { "id": "Q-2201", "accountId": "ACC-DEC", "sourceRef": "T-DEC-2580", "lines": [ { "sku": "CPL-80-FX", "qty": 120, "unitPrice": 2950, "priceListId": "PL-STD-26", "requestedDate": "D+12", "promisedDate": "D+12" } ], "validTo": "D+5", "status": "SENT", "createdAt": "D-9T15:00", "sentAt": "D-9T15:10", "idempotencyKey": "seed-q-2201", "version": 1 },
+    { "id": "Q-2204", "accountId": "ACC-GOD", "sourceRef": "T-GOD-1190", "lines": [ { "sku": "FLG-150-WN", "qty": 200, "unitPrice": 3600, "priceListId": "PL-STD-26", "requestedDate": "D+8", "promisedDate": "D+16" } ], "validTo": "D+10", "status": "SENT", "createdAt": "D-4T11:40", "sentAt": "D-4T12:00", "idempotencyKey": "seed-q-2204", "version": 1 },
+    { "id": "Q-2207", "accountId": "ACC-NIL", "sourceRef": "T-NIL-0745", "lines": [ { "sku": "CPL-45-FX", "qty": 500, "unitPrice": 1420, "priceListId": "PL-STD-26", "requestedDate": "D+20", "promisedDate": "D+20" } ], "validTo": "D+2", "status": "SENT", "createdAt": "D-12T09:30", "sentAt": "D-12T10:00", "idempotencyKey": "seed-q-2207", "version": 1 },
+    { "id": "Q-2209", "accountId": "ACC-COR", "sourceRef": "T-COR-2190", "lines": [ { "sku": "FLG-100-WN", "qty": 150, "unitPrice": 2240, "priceListId": "PL-STD-26", "requestedDate": "D+15", "promisedDate": "D+15" } ], "validTo": "D+12", "status": "SENT", "createdAt": "D-2T15:30", "sentAt": "D-2T16:00", "idempotencyKey": "seed-q-2209", "version": 1 },
+    { "id": "Q-2210", "accountId": "ACC-KAV", "sourceRef": "T-KAV-4410", "lines": [ { "sku": "CPL-60-FX", "qty": 400, "unitPrice": 1860, "priceListId": "PL-KAV-26", "requestedDate": "D+25", "promisedDate": "D+25" } ], "validTo": "D+9", "status": "SENT", "createdAt": "D-6T09:30", "sentAt": "D-6T09:45", "idempotencyKey": "seed-q-2210", "version": 1 }
+  ],
+  "orders": [
+    { "id": "SO-1038", "accountId": "ACC-KAV", "quotationId": "Q-2150", "customerPo": "KAM/4471", "lines": [ { "sku": "CPL-60-FX", "qty": 280, "unitPrice": 1860, "requestedDate": "D+7", "committedDate": "D+7" } ], "status": "OPEN", "latePenaltyPctPerDay": 0.5, "latePenaltyCapPct": 5.0, "createdAt": "D-9T11:00", "idempotencyKey": "seed-so-1038", "version": 1 },
+    { "id": "SO-1040", "accountId": "ACC-NIL", "quotationId": "Q-2160", "customerPo": "NC/PO/889", "lines": [ { "sku": "CPL-45-FX", "qty": 150, "unitPrice": 1420, "requestedDate": "D+2", "committedDate": "D+2" } ], "status": "OPEN", "latePenaltyPctPerDay": 0.5, "latePenaltyCapPct": 5.0, "createdAt": "D-5T10:00", "idempotencyKey": "seed-so-1040", "version": 1 },
+    { "id": "SO-1041", "accountId": "ACC-COR", "quotationId": "Q-2171", "customerPo": "CE-7781", "lines": [ { "sku": "CPL-45-FX", "qty": 300, "unitPrice": 1380, "requestedDate": "D+8", "committedDate": "D+8" } ], "status": "OPEN", "latePenaltyPctPerDay": 0.5, "latePenaltyCapPct": 5.0, "createdAt": "D-8T14:00", "idempotencyKey": "seed-so-1041", "version": 1 },
+    { "id": "SO-1042", "accountId": "ACC-COR", "quotationId": "Q-2175", "customerPo": "CE-7790", "lines": [ { "sku": "FLG-100-WN", "qty": 30, "unitPrice": 2240, "requestedDate": "D+2", "committedDate": "D+2" } ], "status": "OPEN", "latePenaltyPctPerDay": 0.5, "latePenaltyCapPct": 5.0, "createdAt": "D-3T10:00", "idempotencyKey": "seed-so-1042", "version": 1 },
+    { "id": "SO-1036", "accountId": "ACC-DEC", "quotationId": "Q-2140", "customerPo": "DF/PO/2550", "lines": [ { "sku": "CPL-80-FX", "qty": 20, "unitPrice": 2780, "requestedDate": "D+3", "committedDate": "D+3" } ], "status": "OPEN", "latePenaltyPctPerDay": 0.5, "latePenaltyCapPct": 5.0, "createdAt": "D-10T10:00", "idempotencyKey": "seed-so-1036", "version": 1 },
+    { "id": "SO-1043", "accountId": "ACC-GOD", "quotationId": "Q-2180", "customerPo": "GC/2026/311", "lines": [ { "sku": "CPL-60-RG", "qty": 396, "unitPrice": 1560, "requestedDate": "D+9", "committedDate": "D+9" } ], "status": "OPEN", "latePenaltyPctPerDay": 0.5, "latePenaltyCapPct": 5.0, "createdAt": "D-7T16:00", "idempotencyKey": "seed-so-1043", "version": 1 },
+    { "id": "SO-1044", "accountId": "ACC-DEC", "quotationId": "Q-2183", "customerPo": "DF/PO/2588", "lines": [ { "sku": "FLG-100-WN", "qty": 215, "unitPrice": 2240, "requestedDate": "D+12", "committedDate": "D+12" } ], "status": "OPEN", "latePenaltyPctPerDay": 0.5, "latePenaltyCapPct": 5.0, "createdAt": "D-6T12:00", "idempotencyKey": "seed-so-1044", "version": 1 },
+    { "id": "SO-1045", "accountId": "ACC-NIL", "quotationId": "Q-2185", "customerPo": "NC/PO/902", "lines": [ { "sku": "CPL-45-FX", "qty": 450, "unitPrice": 1420, "requestedDate": "D+16", "committedDate": "D+16" } ], "status": "OPEN", "latePenaltyPctPerDay": 0.5, "latePenaltyCapPct": 5.0, "createdAt": "D-4T15:00", "idempotencyKey": "seed-so-1045", "version": 1 },
+
+    { "id": "SO-0977", "accountId": "ACC-COR", "quotationId": "Q-2010", "customerPo": "CE-7102", "lines": [ { "sku": "FLG-100-WN", "qty": 100, "unitPrice": 2240, "requestedDate": "D-70", "committedDate": "D-70" } ], "status": "SHIPPED", "latePenaltyPctPerDay": 0.5, "latePenaltyCapPct": 5.0, "createdAt": "D-90T10:00", "idempotencyKey": "seed-so-0977", "version": 1 },
+    { "id": "SO-0981", "accountId": "ACC-DEC", "quotationId": "Q-2021", "customerPo": "DF/PO/2301", "lines": [ { "sku": "CPL-80-FX", "qty": 50, "unitPrice": 2780, "requestedDate": "D-60", "committedDate": "D-60" } ], "status": "SHIPPED", "latePenaltyPctPerDay": 0.5, "latePenaltyCapPct": 5.0, "createdAt": "D-80T10:00", "idempotencyKey": "seed-so-0981", "version": 1 },
+    { "id": "SO-0985", "accountId": "ACC-GOD", "quotationId": "Q-2033", "customerPo": "GC/2026/240", "lines": [ { "sku": "FLG-150-WN", "qty": 80, "unitPrice": 3600, "requestedDate": "D-55", "committedDate": "D-55" } ], "status": "SHIPPED", "latePenaltyPctPerDay": 0.5, "latePenaltyCapPct": 5.0, "createdAt": "D-75T10:00", "idempotencyKey": "seed-so-0985", "version": 1 },
+    { "id": "SO-0990", "accountId": "ACC-NIL", "quotationId": "Q-2040", "customerPo": "NC/PO/811", "lines": [ { "sku": "CPL-45-FX", "qty": 200, "unitPrice": 1420, "requestedDate": "D-50", "committedDate": "D-50" } ], "status": "SHIPPED", "latePenaltyPctPerDay": 0.5, "latePenaltyCapPct": 5.0, "createdAt": "D-70T10:00", "idempotencyKey": "seed-so-0990", "version": 1 },
+    { "id": "SO-0995", "accountId": "ACC-SUND", "quotationId": "Q-2052", "customerPo": "SP/4310", "lines": [ { "sku": "CPL-60-FX", "qty": 200, "unitPrice": 1840, "requestedDate": "D-35", "committedDate": "D-35" } ], "status": "SHIPPED", "latePenaltyPctPerDay": 0.5, "latePenaltyCapPct": 5.0, "createdAt": "D-50T10:00", "idempotencyKey": "seed-so-0995", "version": 1 },
+    { "id": "SO-1002", "accountId": "ACC-KAV", "quotationId": "Q-2066", "customerPo": "KAM/4390", "lines": [ { "sku": "CPL-60-FX", "qty": 300, "unitPrice": 1860, "requestedDate": "D-28", "committedDate": "D-28" } ], "status": "SHIPPED", "latePenaltyPctPerDay": 0.5, "latePenaltyCapPct": 5.0, "createdAt": "D-45T10:00", "idempotencyKey": "seed-so-1002", "version": 1 },
+    { "id": "SO-1039", "accountId": "ACC-SUND", "quotationId": "Q-2120", "customerPo": "SP/4402", "lines": [ { "sku": "CPL-45-FX", "qty": 400, "unitPrice": 1330, "requestedDate": "D-2", "committedDate": "D-2" } ], "status": "SHIPPED", "latePenaltyPctPerDay": 0.5, "latePenaltyCapPct": 5.0, "createdAt": "D-15T10:00", "idempotencyKey": "seed-so-1039", "version": 1 }
+  ]
+}

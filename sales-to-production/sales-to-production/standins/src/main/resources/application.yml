@@ -1,0 +1,27 @@
+# One jar, five systems of record. Pick one with --spring.profiles.active.
+s2p:
+  sim:
+    start: ${SIM_START:2026-11-11T09:30:00+05:30}
+    real-anchor-epoch: ${SIM_REAL_ANCHOR:0}
+spring:
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+      write-durations-as-timestamps: false
+    deserialization:
+      adjust-dates-to-context-time-zone: false
+---
+spring.config.activate.on-profile: mailbox
+server.port: ${PORT:8081}
+---
+spring.config.activate.on-profile: crm
+server.port: ${PORT:8082}
+---
+spring.config.activate.on-profile: erp
+server.port: ${PORT:8083}
+---
+spring.config.activate.on-profile: planning
+server.port: ${PORT:8084}
+---
+spring.config.activate.on-profile: statusfeed
+server.port: ${PORT:8085}

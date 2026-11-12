@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plant desk: sales to production</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/app/styles.css">
+</head>
+<body>
+<div class="shell">
+  <nav class="rail" aria-label="Workspaces">
+    <div class="brand">Plant desk<span>Precision Couplings, Chennai</span></div>
+    <div class="nav" id="nav">
+      <a href="#sales" data-route="sales">Sales desk <span class="count" data-count="SALES_REP" hidden></span></a>
+      <a href="#planning" data-route="planning">Planning <span class="count" data-count="PLANNER" hidden></span></a>
+      <a href="#pipeline" data-route="pipeline">Pipeline</a>
+      <a href="#operations" data-route="operations">Operations <span class="count" data-count="OPS_HEAD" hidden></span></a>
+      <a href="#review" data-route="review">Review console</a>
+    </div>
+    <a class="portal" href="/customer.html?token=kav-2c91" target="_blank" rel="noopener">Customer portal (opens separately)</a>
+    <div class="who">
+      <label for="who">You are</label>
+      <input id="who" autocomplete="name">
+      <select id="role" aria-label="Your role">
+        <option value="SALES_REP">Sales rep</option><option value="PLANNER">Planner</option>
+        <option value="SALES_HEAD">Sales head</option><option value="OPS_HEAD">Operations head</option>
+      </select>
+    </div>
+  </nav>
+  <div>
+    <header class="topbar">
+      <form class="askform" id="askForm" aria-label="Ask the system">
+        <input name="q" placeholder="Ask anything, e.g. Can we promise 250 units by the 20th?" aria-label="Question">
+        <select name="accountId" aria-label="About customer"><option value="">any customer</option></select>
+        <select name="sku" aria-label="About product"><option value="">any product</option></select>
+        <button class="primary" type="submit">Ask</button>
+      </form>
+      <div class="chips" id="chips" aria-label="Data freshness by source"></div>
+    </header>
+    <div class="answerpanel" id="answer" hidden></div>
+    <main class="content" id="view" tabindex="-1"></main>
+  </div>
+</div>
+<aside class="drawer" id="drawer" role="dialog" aria-label="How this figure was calculated" hidden></aside>
+<div class="toast" id="toast" role="status" hidden></div>
+<script type="module" src="/app/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,485 @@
+{
+ "lines": [
+  {
+   "id": "L1",
+   "name": "Heavy machining line",
+   "weekdayMinutes": 960,
+   "saturdayMinutes": 480,
+   "costPerMinute": 28,
+   "overtimeCostPerHour": 2100,
+   "maxWeekdayOvertimeMinutes": 120,
+   "maxSundayOvertimeMinutes": 480
+  },
+  {
+   "id": "L2",
+   "name": "Coupling line",
+   "weekdayMinutes": 960,
+   "saturdayMinutes": 480,
+   "costPerMinute": 22,
+   "overtimeCostPerHour": 1900,
+   "maxWeekdayOvertimeMinutes": 120,
+   "maxSundayOvertimeMinutes": 480
+  },
+  {
+   "id": "L3",
+   "name": "Flexible machining cell",
+   "weekdayMinutes": 480,
+   "saturdayMinutes": 0,
+   "costPerMinute": 30,
+   "overtimeCostPerHour": 1700,
+   "maxWeekdayOvertimeMinutes": 120,
+   "maxSundayOvertimeMinutes": 0
+  }
+ ],
+ "capacityOverrides": [
+  {
+   "lineId": "L2",
+   "date": "D-1",
+   "availableMinutes": 0,
+   "note": "Spindle bearing repair"
+  },
+  {
+   "lineId": "L1",
+   "date": "D+6",
+   "availableMinutes": 480,
+   "note": "Preventive maintenance (one shift)"
+  }
+ ],
+ "routings": [
+  {
+   "sku": "CPL-45-FX",
+   "lineId": "L2",
+   "minutesPerUnit": 4.0,
+   "preferred": true,
+   "changeoverMinutes": 0
+  },
+  {
+   "sku": "CPL-45-FX",
+   "lineId": "L3",
+   "minutesPerUnit": 7.0,
+   "preferred": false,
+   "changeoverMinutes": 60
+  },
+  {
+   "sku": "CPL-60-FX",
+   "lineId": "L2",
+   "minutesPerUnit": 5.0,
+   "preferred": true,
+   "changeoverMinutes": 0
+  },
+  {
+   "sku": "CPL-60-FX",
+   "lineId": "L3",
+   "minutesPerUnit": 8.0,
+   "preferred": false,
+   "changeoverMinutes": 90
+  },
+  {
+   "sku": "CPL-60-RG",
+   "lineId": "L2",
+   "minutesPerUnit": 4.5,
+   "preferred": true,
+   "changeoverMinutes": 0
+  },
+  {
+   "sku": "CPL-80-FX",
+   "lineId": "L1",
+   "minutesPerUnit": 8.0,
+   "preferred": true,
+   "changeoverMinutes": 0
+  },
+  {
+   "sku": "FLG-100-WN",
+   "lineId": "L1",
+   "minutesPerUnit": 6.0,
+   "preferred": true,
+   "changeoverMinutes": 0
+  },
+  {
+   "sku": "FLG-100-WN",
+   "lineId": "L3",
+   "minutesPerUnit": 10.0,
+   "preferred": false,
+   "changeoverMinutes": 60
+  },
+  {
+   "sku": "FLG-150-WN",
+   "lineId": "L1",
+   "minutesPerUnit": 9.0,
+   "preferred": true,
+   "changeoverMinutes": 0
+  }
+ ],
+ "workOrders": [
+  {
+   "id": "WO-5512",
+   "orderId": "SO-1038",
+   "sku": "CPL-60-FX",
+   "lineId": "L2",
+   "qty": 200,
+   "completedQty": 0,
+   "allocations": [
+    {
+     "date": "D+5",
+     "qty": 100
+    },
+    {
+     "date": "D+6",
+     "qty": 100
+    }
+   ],
+   "status": "RELEASED",
+   "originalPlannedFinish": "D+5",
+   "overtimeMinutes": 0,
+   "idempotencyKey": "seed-wo-5512"
+  },
+  {
+   "id": "WO-5520",
+   "orderId": "SO-1041",
+   "sku": "CPL-45-FX",
+   "lineId": "L2",
+   "qty": 300,
+   "completedQty": 60,
+   "allocations": [
+    {
+     "date": "D+1",
+     "qty": 120
+    },
+    {
+     "date": "D+2",
+     "qty": 120
+    }
+   ],
+   "status": "IN_PROGRESS",
+   "originalPlannedFinish": "D+2",
+   "overtimeMinutes": 0,
+   "idempotencyKey": "seed-wo-5520"
+  },
+  {
+   "id": "WO-5524",
+   "orderId": "SO-1043",
+   "sku": "CPL-60-RG",
+   "lineId": "L2",
+   "qty": 336,
+   "completedQty": 0,
+   "allocations": [
+    {
+     "date": "D+1",
+     "qty": 100
+    },
+    {
+     "date": "D+2",
+     "qty": 80
+    },
+    {
+     "date": "D+3",
+     "qty": 100
+    },
+    {
+     "date": "D+5",
+     "qty": 56
+    }
+   ],
+   "status": "RELEASED",
+   "originalPlannedFinish": "D+5",
+   "overtimeMinutes": 0,
+   "idempotencyKey": "seed-wo-5524"
+  },
+  {
+   "id": "WO-5527",
+   "orderId": "SO-1044",
+   "sku": "FLG-100-WN",
+   "lineId": "L3",
+   "qty": 215,
+   "completedQty": 0,
+   "allocations": [
+    {
+     "date": "D+1",
+     "qty": 48
+    },
+    {
+     "date": "D+2",
+     "qty": 48
+    },
+    {
+     "date": "D+5",
+     "qty": 33
+    },
+    {
+     "date": "D+6",
+     "qty": 38
+    },
+    {
+     "date": "D+7",
+     "qty": 48
+    }
+   ],
+   "status": "RELEASED",
+   "originalPlannedFinish": "D+7",
+   "overtimeMinutes": 0,
+   "idempotencyKey": "seed-wo-5527"
+  },
+  {
+   "id": "WO-5530",
+   "orderId": "SO-1045",
+   "sku": "CPL-45-FX",
+   "lineId": "L2",
+   "qty": 450,
+   "completedQty": 0,
+   "allocations": [
+    {
+     "date": "D+6",
+     "qty": 65
+    },
+    {
+     "date": "D+7",
+     "qty": 140
+    },
+    {
+     "date": "D+8",
+     "qty": 115
+    },
+    {
+     "date": "D+9",
+     "qty": 90
+    },
+    {
+     "date": "D+12",
+     "qty": 40
+    }
+   ],
+   "status": "RELEASED",
+   "originalPlannedFinish": "D+12",
+   "overtimeMinutes": 0,
+   "idempotencyKey": "seed-wo-5530"
+  }
+ ],
+ "history": [
+  {
+   "workOrderId": "WO-L2-H01",
+   "lineId": "L2",
+   "plannedFinish": "D-62",
+   "actualFinish": "D-62"
+  },
+  {
+   "workOrderId": "WO-L2-H02",
+   "lineId": "L2",
+   "plannedFinish": "D-58",
+   "actualFinish": "D-58"
+  },
+  {
+   "workOrderId": "WO-L2-H03",
+   "lineId": "L2",
+   "plannedFinish": "D-54",
+   "actualFinish": "D-53"
+  },
+  {
+   "workOrderId": "WO-L2-H04",
+   "lineId": "L2",
+   "plannedFinish": "D-50",
+   "actualFinish": "D-50"
+  },
+  {
+   "workOrderId": "WO-L2-H05",
+   "lineId": "L2",
+   "plannedFinish": "D-46",
+   "actualFinish": "D-44"
+  },
+  {
+   "workOrderId": "WO-L2-H06",
+   "lineId": "L2",
+   "plannedFinish": "D-42",
+   "actualFinish": "D-42"
+  },
+  {
+   "workOrderId": "WO-L2-H07",
+   "lineId": "L2",
+   "plannedFinish": "D-38",
+   "actualFinish": "D-38"
+  },
+  {
+   "workOrderId": "WO-L2-H08",
+   "lineId": "L2",
+   "plannedFinish": "D-34",
+   "actualFinish": "D-33"
+  },
+  {
+   "workOrderId": "WO-L2-H09",
+   "lineId": "L2",
+   "plannedFinish": "D-30",
+   "actualFinish": "D-30"
+  },
+  {
+   "workOrderId": "WO-L2-H10",
+   "lineId": "L2",
+   "plannedFinish": "D-26",
+   "actualFinish": "D-23"
+  },
+  {
+   "workOrderId": "WO-L2-H11",
+   "lineId": "L2",
+   "plannedFinish": "D-22",
+   "actualFinish": "D-22"
+  },
+  {
+   "workOrderId": "WO-L2-H12",
+   "lineId": "L2",
+   "plannedFinish": "D-18",
+   "actualFinish": "D-18"
+  },
+  {
+   "workOrderId": "WO-L2-H13",
+   "lineId": "L2",
+   "plannedFinish": "D-14",
+   "actualFinish": "D-13"
+  },
+  {
+   "workOrderId": "WO-L2-H14",
+   "lineId": "L2",
+   "plannedFinish": "D-10",
+   "actualFinish": "D-10"
+  },
+  {
+   "workOrderId": "WO-L3-H01",
+   "lineId": "L3",
+   "plannedFinish": "D-40",
+   "actualFinish": "D-40"
+  },
+  {
+   "workOrderId": "WO-L3-H02",
+   "lineId": "L3",
+   "plannedFinish": "D-36",
+   "actualFinish": "D-36"
+  },
+  {
+   "workOrderId": "WO-L3-H03",
+   "lineId": "L3",
+   "plannedFinish": "D-32",
+   "actualFinish": "D-32"
+  },
+  {
+   "workOrderId": "WO-L3-H04",
+   "lineId": "L3",
+   "plannedFinish": "D-28",
+   "actualFinish": "D-27"
+  },
+  {
+   "workOrderId": "WO-L3-H05",
+   "lineId": "L3",
+   "plannedFinish": "D-24",
+   "actualFinish": "D-24"
+  },
+  {
+   "workOrderId": "WO-L3-H06",
+   "lineId": "L3",
+   "plannedFinish": "D-20",
+   "actualFinish": "D-20"
+  },
+  {
+   "workOrderId": "WO-L3-H07",
+   "lineId": "L3",
+   "plannedFinish": "D-16",
+   "actualFinish": "D-16"
+  },
+  {
+   "workOrderId": "WO-L3-H08",
+   "lineId": "L3",
+   "plannedFinish": "D-12",
+   "actualFinish": "D-12"
+  },
+  {
+   "workOrderId": "WO-L1-H01",
+   "lineId": "L1",
+   "plannedFinish": "D-48",
+   "actualFinish": "D-48"
+  },
+  {
+   "workOrderId": "WO-L1-H02",
+   "lineId": "L1",
+   "plannedFinish": "D-44",
+   "actualFinish": "D-44"
+  },
+  {
+   "workOrderId": "WO-L1-H03",
+   "lineId": "L1",
+   "plannedFinish": "D-40",
+   "actualFinish": "D-40"
+  },
+  {
+   "workOrderId": "WO-L1-H04",
+   "lineId": "L1",
+   "plannedFinish": "D-36",
+   "actualFinish": "D-36"
+  },
+  {
+   "workOrderId": "WO-L1-H05",
+   "lineId": "L1",
+   "plannedFinish": "D-32",
+   "actualFinish": "D-30"
+  },
+  {
+   "workOrderId": "WO-L1-H06",
+   "lineId": "L1",
+   "plannedFinish": "D-28",
+   "actualFinish": "D-28"
+  },
+  {
+   "workOrderId": "WO-L1-H07",
+   "lineId": "L1",
+   "plannedFinish": "D-24",
+   "actualFinish": "D-24"
+  },
+  {
+   "workOrderId": "WO-L1-H08",
+   "lineId": "L1",
+   "plannedFinish": "D-20",
+   "actualFinish": "D-20"
+  },
+  {
+   "workOrderId": "WO-L1-H09",
+   "lineId": "L1",
+   "plannedFinish": "D-16",
+   "actualFinish": "D-16"
+  },
+  {
+   "workOrderId": "WO-L1-H10",
+   "lineId": "L1",
+   "plannedFinish": "D-12",
+   "actualFinish": "D-12"
+  }
+ ],
+ "events": [
+  {
+   "seq": 41,
+   "type": "WO_CREATED",
+   "lineId": "L2",
+   "workOrderId": "WO-5512",
+   "detail": "Created for SO-1038: 200 x CPL-60-FX",
+   "occurredAt": "D-9T11:20"
+  },
+  {
+   "seq": 42,
+   "type": "PLAN_PUBLISHED",
+   "lineId": null,
+   "workOrderId": null,
+   "detail": "Weekly plan published (planning version 412)",
+   "occurredAt": "D-7T10:06"
+  },
+  {
+   "seq": 43,
+   "type": "LINE_SLIP",
+   "lineId": "L2",
+   "workOrderId": null,
+   "detail": "L2 lost 1 working day (spindle bearing repair); WO-5512 and WO-5524 pushed back one working day",
+   "occurredAt": "D-2T14:20"
+  },
+  {
+   "seq": 44,
+   "type": "WO_PROGRESS",
+   "lineId": "L2",
+   "workOrderId": "WO-5520",
+   "detail": "60/300 complete",
+   "occurredAt": "D-1T16:00"
+  }
+ ]
+}

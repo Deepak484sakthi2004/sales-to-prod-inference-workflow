@@ -1,0 +1,49 @@
+{
+  "accounts": [
+    { "id": "ACC-SUND", "name": "Sundaram Pumps Ltd", "emailDomain": "sundarampumps.example", "tier": "A", "region": "Chennai", "transitDays": 1, "historicalWinRate": 0.72 },
+    { "id": "ACC-KAV", "name": "Kaveri Agro Machinery", "emailDomain": "kaveriagro.example", "tier": "A", "region": "Coimbatore", "transitDays": 1, "historicalWinRate": 0.80 },
+    { "id": "ACC-COR", "name": "Coromandel Engineering", "emailDomain": "coromandeleng.example", "tier": "B", "region": "Chennai", "transitDays": 1, "historicalWinRate": 0.67 },
+    { "id": "ACC-DEC", "name": "Deccan Fluid Systems", "emailDomain": "deccanfluid.example", "tier": "B", "region": "Pune", "transitDays": 2, "historicalWinRate": 0.50 },
+    { "id": "ACC-NIL", "name": "Nilgiri Compressors", "emailDomain": "nilgiricomp.example", "tier": "C", "region": "Coimbatore", "transitDays": 1, "historicalWinRate": 0.33 },
+    { "id": "ACC-GOD", "name": "Godavari Conveyors", "emailDomain": "godavariconveyors.example", "tier": "B", "region": "Hyderabad", "transitDays": 2, "historicalWinRate": 0.60 }
+  ],
+  "contacts": [
+    { "id": "CON-1", "accountId": "ACC-SUND", "name": "Meena Iyer", "email": "meena.iyer@sundarampumps.example", "role": "Purchase Manager" },
+    { "id": "CON-2", "accountId": "ACC-KAV", "name": "Ravi Shankar", "email": "ravi.shankar@kaveriagro.example", "role": "Head of Procurement" },
+    { "id": "CON-3", "accountId": "ACC-COR", "name": "Fathima Begum", "email": "fathima.begum@coromandeleng.example", "role": "Buyer" },
+    { "id": "CON-4", "accountId": "ACC-DEC", "name": "Anil Joshi", "email": "anil.joshi@deccanfluid.example", "role": "Purchase Lead" },
+    { "id": "CON-5", "accountId": "ACC-NIL", "name": "John Mathew", "email": "john.mathew@nilgiricomp.example", "role": "Materials Manager" },
+    { "id": "CON-6", "accountId": "ACC-GOD", "name": "Srinivas Rao", "email": "srinivas.rao@godavariconveyors.example", "role": "Sourcing Manager" }
+  ],
+  "opportunities": [
+    { "id": "OPP-2201", "accountId": "ACC-DEC", "quotationId": "Q-2201", "stage": "OPEN", "value": 354000 },
+    { "id": "OPP-2204", "accountId": "ACC-GOD", "quotationId": "Q-2204", "stage": "OPEN", "value": 720000 },
+    { "id": "OPP-2207", "accountId": "ACC-NIL", "quotationId": "Q-2207", "stage": "OPEN", "value": 710000 },
+    { "id": "OPP-2209", "accountId": "ACC-COR", "quotationId": "Q-2209", "stage": "OPEN", "value": 336000 },
+    { "id": "OPP-2210", "accountId": "ACC-KAV", "quotationId": "Q-2210", "stage": "OPEN", "value": 744000 },
+
+    { "id": "OPP-H01", "accountId": "ACC-SUND", "stage": "WON",  "value": 368000, "closedAt": "D-150T12:00", "signals": { "daysSilent": 1,  "priceGapPct": 0,   "deliveryGapDays": 0, "competitorMentioned": 0, "validityExpiring": 0, "accountWinRate": 0.72 } },
+    { "id": "OPP-H02", "accountId": "ACC-KAV",  "stage": "WON",  "value": 558000, "closedAt": "D-140T12:00", "signals": { "daysSilent": 2,  "priceGapPct": 1.5, "deliveryGapDays": 0, "competitorMentioned": 0, "validityExpiring": 0, "accountWinRate": 0.80 } },
+    { "id": "OPP-H03", "accountId": "ACC-DEC",  "stage": "LOST", "value": 295000, "closedAt": "D-131T12:00", "signals": { "daysSilent": 9,  "priceGapPct": 7,   "deliveryGapDays": 0, "competitorMentioned": 1, "validityExpiring": 0, "accountWinRate": 0.50 } },
+    { "id": "OPP-H04", "accountId": "ACC-NIL",  "stage": "LOST", "value": 284000, "closedAt": "D-122T12:00", "signals": { "daysSilent": 14, "priceGapPct": 0,   "deliveryGapDays": 3, "competitorMentioned": 0, "validityExpiring": 1, "accountWinRate": 0.33 } },
+    { "id": "OPP-H05", "accountId": "ACC-GOD",  "stage": "WON",  "value": 288000, "closedAt": "D-110T12:00", "signals": { "daysSilent": 3,  "priceGapPct": 2,   "deliveryGapDays": 2, "competitorMentioned": 0, "validityExpiring": 0, "accountWinRate": 0.60 } },
+    { "id": "OPP-H06", "accountId": "ACC-COR",  "stage": "WON",  "value": 224000, "closedAt": "D-101T12:00", "signals": { "daysSilent": 1,  "priceGapPct": 0,   "deliveryGapDays": 0, "competitorMentioned": 0, "validityExpiring": 0, "accountWinRate": 0.67 } },
+    { "id": "OPP-H07", "accountId": "ACC-GOD",  "stage": "LOST", "value": 412000, "closedAt": "D-92T12:00",  "signals": { "daysSilent": 6,  "priceGapPct": 4,   "deliveryGapDays": 7, "competitorMentioned": 0, "validityExpiring": 0, "accountWinRate": 0.60 } },
+    { "id": "OPP-H08", "accountId": "ACC-SUND", "stage": "LOST", "value": 330000, "closedAt": "D-84T12:00",  "signals": { "daysSilent": 4,  "priceGapPct": 8,   "deliveryGapDays": 0, "competitorMentioned": 1, "validityExpiring": 0, "accountWinRate": 0.72 } },
+    { "id": "OPP-H09", "accountId": "ACC-KAV",  "stage": "WON",  "value": 186000, "closedAt": "D-71T12:00",  "signals": { "daysSilent": 5,  "priceGapPct": 0,   "deliveryGapDays": 0, "competitorMentioned": 0, "validityExpiring": 1, "accountWinRate": 0.80 } },
+    { "id": "OPP-H10", "accountId": "ACC-DEC",  "stage": "WON",  "value": 139000, "closedAt": "D-60T12:00",  "signals": { "daysSilent": 2,  "priceGapPct": 1,   "deliveryGapDays": 0, "competitorMentioned": 0, "validityExpiring": 0, "accountWinRate": 0.50 } },
+    { "id": "OPP-H11", "accountId": "ACC-NIL",  "stage": "WON",  "value": 284000, "closedAt": "D-49T12:00",  "signals": { "daysSilent": 3,  "priceGapPct": 0,   "deliveryGapDays": 0, "competitorMentioned": 0, "validityExpiring": 0, "accountWinRate": 0.33 } },
+    { "id": "OPP-H12", "accountId": "ACC-COR",  "stage": "LOST", "value": 201000, "closedAt": "D-38T12:00",  "signals": { "daysSilent": 10, "priceGapPct": 3,   "deliveryGapDays": 2, "competitorMentioned": 0, "validityExpiring": 1, "accountWinRate": 0.67 } },
+    { "id": "OPP-H13", "accountId": "ACC-SUND", "stage": "WON",  "value": 532000, "closedAt": "D-26T12:00",  "signals": { "daysSilent": 7,  "priceGapPct": 2,   "deliveryGapDays": 1, "competitorMentioned": 1, "validityExpiring": 0, "accountWinRate": 0.72 } },
+    { "id": "OPP-H14", "accountId": "ACC-GOD",  "stage": "LOST", "value": 360000, "closedAt": "D-15T12:00",  "signals": { "daysSilent": 2,  "priceGapPct": 0,   "deliveryGapDays": 0, "competitorMentioned": 0, "validityExpiring": 0, "accountWinRate": 0.60 } }
+  ],
+  "activities": [
+    { "id": "ACT-11", "accountId": "ACC-DEC", "quotationId": "Q-2201", "type": "EMAIL", "direction": "OUTBOUND", "note": "Quotation Q-2201 sent", "at": "D-9T15:10" },
+    { "id": "ACT-12", "accountId": "ACC-DEC", "quotationId": "Q-2201", "type": "CALL", "direction": "INBOUND", "note": "Anil says a Pune vendor quoted lower; they will decide by month end", "at": "D-3T11:30" },
+    { "id": "ACT-13", "accountId": "ACC-GOD", "quotationId": "Q-2204", "type": "EMAIL", "direction": "OUTBOUND", "note": "Quotation Q-2204 sent; delivery offered later than requested because plate stock arrives next week", "at": "D-4T12:00" },
+    { "id": "ACT-14", "accountId": "ACC-NIL", "quotationId": "Q-2207", "type": "EMAIL", "direction": "OUTBOUND", "note": "Quotation Q-2207 sent", "at": "D-12T10:00" },
+    { "id": "ACT-15", "accountId": "ACC-COR", "quotationId": "Q-2209", "type": "EMAIL", "direction": "OUTBOUND", "note": "Quotation Q-2209 sent", "at": "D-2T16:00" },
+    { "id": "ACT-16", "accountId": "ACC-COR", "quotationId": "Q-2209", "type": "EMAIL", "direction": "INBOUND", "note": "Looks good, will confirm PO by Friday", "at": "D-1T10:15" },
+    { "id": "ACT-17", "accountId": "ACC-KAV", "quotationId": "Q-2210", "type": "EMAIL", "direction": "OUTBOUND", "note": "Quotation Q-2210 sent", "at": "D-6T09:45" }
+  ]
+}

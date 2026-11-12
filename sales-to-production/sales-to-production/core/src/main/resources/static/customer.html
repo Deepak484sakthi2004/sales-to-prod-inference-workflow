@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your orders: Precision Couplings</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root { --paper: #f6f7f6; --panel: #fff; --ink: #1b242c; --muted: #5d6b76; --rule: #dde2e5; --blue: #2c5d8f;
+  --amber: #a86f05; --amber-soft: #fbf0d9; --done: #2f7d5b; color-scheme: light; }
+@media (prefers-color-scheme: dark) {
+  :root { --paper: #12181d; --panel: #1a2229; --ink: #e6ecf0; --muted: #93a3b0; --rule: #2c3741; --blue: #7fb0e0;
+    --amber: #e2ab3c; --amber-soft: #3a2f18; --done: #6cc19a; color-scheme: dark; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.55 "IBM Plex Sans", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+.wrap { max-width: 44rem; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+h1 { font-size: 1.5rem; font-weight: 600; margin: 0 0 .25rem; }
+.muted { color: var(--muted); }
+form { display: flex; gap: .5rem; margin: 1.25rem 0 1.75rem; }
+input { flex: 1; font: inherit; padding: .5rem .7rem; border: 1px solid var(--rule); border-radius: 4px; background: var(--panel); color: var(--ink); }
+button { font: inherit; padding: .5rem 1rem; border-radius: 4px; border: 0; background: var(--blue); color: #fff; cursor: pointer; }
+input:focus-visible, button:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+.order { background: var(--panel); border: 1px solid var(--rule); border-radius: 6px; padding: 1.1rem 1.2rem; margin-bottom: 1rem; }
+.order h2 { font-size: 1.1rem; margin: 0; font-weight: 600; }
+.steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; margin: 1rem 0 .4rem; list-style: none; padding: 0; }
+.steps li { font-size: .78rem; color: var(--muted); border-top: 4px solid var(--rule); padding-top: .35rem; }
+.steps li.done { border-color: var(--done); color: var(--ink); }
+.steps li.now { border-color: var(--blue); color: var(--ink); font-weight: 600; }
+.dates { display: flex; flex-wrap: wrap; gap: .4rem 2rem; margin-top: .8rem; }
+.dates strong { display: block; font-size: 1.05rem; }
+.reconfirm { background: var(--amber-soft); color: var(--amber); padding: .1rem .45rem; border-radius: 3px; font-weight: 600; }
+.basis { font-size: .85rem; margin-top: .7rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Your orders</h1>
+  <div class="muted">Precision Couplings, Chennai. This page shows the status we have confirmed to you.</div>
+  <form id="f">
+    <input id="token" placeholder="Your access code" aria-label="Access code">
+    <button type="submit">Show my orders</button>
+  </form>
+  <div id="out" aria-live="polite"></div>
+</div>
+<script>
+const STEPS = ['ORDER_RECEIVED', 'SCHEDULED', 'IN_PRODUCTION', 'READY_TO_DISPATCH', 'SHIPPED'];
+const LABEL = { ORDER_RECEIVED: 'Received', SCHEDULED: 'Scheduled', IN_PRODUCTION: 'In production', READY_TO_DISPATCH: 'Ready', SHIPPED: 'Shipped' };
+const fmt = d => d ? new Date(d + 'T00:00:00Z').toLocaleDateString('en-IN', { weekday: 'short', day: 'numeric', month: 'long', timeZone: 'UTC' }) : '';
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const out = document.getElementById('out');
+async function show(token) {
+  out.textContent = 'Loading…';
+  const r = await fetch('/customer/api/orders', { headers: { 'X-Customer-Token': token } });
+  if (!r.ok) { out.textContent = r.status === 403 ? 'That access code is not recognised. Check the code in your order confirmation email.' : 'The status service is not reachable. Try again in a few minutes.'; return; }
+  const a = await r.json();
+  if (!a.orders.length) { out.textContent = a.note || 'No orders on your account.'; return; }
+  out.innerHTML = `<p class="muted">${esc(a.account)}</p>` + a.orders.map(o => {
+    const at = STEPS.indexOf(o.stage);
+    return `<article class="order">
+      <h2>${esc(o.orderRef)}${o.yourPo ? ` <span class="muted" style="font-weight:400">your PO ${esc(o.yourPo)}</span>` : ''}</h2>
+      <ol class="steps">${STEPS.map((s, i) => `<li class="${i < at ? 'done' : i === at ? 'now' : ''}">${LABEL[s]}</li>`).join('')}</ol>
+      <div>${esc(o.message)}</div>
+      <div class="dates">
+        <div><span class="muted">Promised</span><strong>${fmt(o.promisedDate)}</strong></div>
+        <div><span class="muted">Current estimate</span><strong>${o.currentEstimate ? fmt(o.currentEstimate) : '<span class="reconfirm">Being reconfirmed</span>'}</strong></div>
+      </div>
+      <div class="basis muted">${esc(o.basisText)}</div>
+    </article>`;
+  }).join('');
+}
+document.getElementById('f').addEventListener('submit', e => { e.preventDefault(); const t = document.getElementById('token').value.trim(); if (t) show(t); });
+const q = new URLSearchParams(location.search).get('token');
+if (q) { document.getElementById('token').value = q; show(q); }
+</script>
+</body>
+</html>

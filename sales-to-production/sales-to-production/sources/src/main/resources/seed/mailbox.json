@@ -1,0 +1,36 @@
+{
+  "messages": [
+    {
+      "id": "MSG-101", "messageId": "<CAK8812.sund@sundarampumps.example>", "threadId": "T-SUND-8812", "inReplyTo": null,
+      "from": "meena.iyer@sundarampumps.example", "to": "sales@precisioncouplings.example",
+      "subject": "Requirement - 60mm coupling",
+      "body": "Hi team,\n\nWe need 250 units of the 60mm coupling by the 20th, and we want to know today whether that is realistic.\n\nRegards,\nMeena Iyer\nPurchase Manager, Sundaram Pumps Ltd",
+      "receivedAt": "DT09:05", "attachments": []
+    },
+    {
+      "id": "MSG-102", "messageId": "<CAK8812.sund@sundarampumps.example>", "threadId": "T-SUND-8812", "inReplyTo": null,
+      "from": "meena.iyer@sundarampumps.example", "to": "sales@precisioncouplings.example",
+      "subject": "Requirement - 60mm coupling",
+      "body": "Hi team,\n\nWe need 250 units of the 60mm coupling by the 20th, and we want to know today whether that is realistic.\n\nRegards,\nMeena Iyer\nPurchase Manager, Sundaram Pumps Ltd",
+      "receivedAt": "DT09:06", "attachments": []
+    },
+    {
+      "id": "MSG-103", "messageId": "<cor-2231@coromandeleng.example>", "threadId": "T-COR-2231", "inReplyTo": null,
+      "from": "fathima.begum@coromandeleng.example", "to": "sales@precisioncouplings.example",
+      "subject": "Flanges required",
+      "body": "Dear Sir,\n\nPlease quote for weld neck flanges, needed urgently for a pipeline job. Drawing to follow.\n\nThanks,\nFathima Begum\nCoromandel Engineering",
+      "receivedAt": "DT08:40", "attachments": []
+    },
+    {
+      "id": "MSG-104", "messageId": "<rfq-df-2611@deccanfluid.example>", "threadId": "T-DEC-2611", "inReplyTo": null,
+      "from": "anil.joshi@deccanfluid.example", "to": "sales@precisioncouplings.example",
+      "subject": "RFQ DF/2611",
+      "body": "Hello,\n\nPlease find our RFQ attached. Kindly quote at the earliest.\n\nAnil Joshi\nDeccan Fluid Systems, Pune",
+      "receivedAt": "DT08:55",
+      "attachments": [
+        { "name": "RFQ-DF-2611.csv", "contentType": "text/csv",
+          "text": "item,qty,required_by\nFlexible jaw coupling 80mm,60,27th\nWeld neck flange 100mm,40,27th" }
+      ]
+    }
+  ]
+}
