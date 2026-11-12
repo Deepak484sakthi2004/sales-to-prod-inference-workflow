@@ -1,6 +1,8 @@
 # Design note
 
-Diagram of the processes, components and every API: [`architecture.excalidraw`](architecture.excalidraw) (open at excalidraw.com). Run log: [`RUN_LOG.txt`](RUN_LOG.txt).
+Diagram of the processes, components and every API: [`architecture.excalidraw`](./architecture-diagram.svg)
+
+Run log: [`RUN_LOG.txt`](RUN_LOG.txt).
 
 **Shape.** Seven processes. Five stand-ins (mailbox :8081, CRM :8082, ERP :8083, planning :8084, status feed :8085) run from one Spring Boot jar, each reachable only through its REST interface. The intelligence layer, core :8080, is plain Java behind port interfaces, wired to HTTP adapters live and to in-process adapters in tests and the run-log generator; it serves the plant desk and the customer portal (`/api/*`, `/customer/api/orders`). The AI service :8090 (Python, FastAPI) puts Gemini behind three calls: read a mail (`/v1/extract`), read a question (`/v1/ask/plan`), read CRM notes (`/v1/activities`). It reaches no business system and executes nothing.
 

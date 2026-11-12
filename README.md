@@ -1,5 +1,5 @@
 
-[Edit architecture diagram](./architecture.excalidraw)
+[Edit architecture diagram](./architecture-diagram.svg)
 
 
 # Sales-to-production intelligence layer
@@ -16,9 +16,8 @@ deterministic engine computes the answer. If the model cannot be reached nothing
 read on a later poll, and a question gets "I cannot read questions right now". The core keeps its own records in
 memory by default, or in MongoDB Atlas with one setting.
 
-* Design note: [`docs/DESIGN.md`](docs/DESIGN.md)
-* Run log (17 scenarios, generated from real output): [`docs/RUN_LOG.txt`](docs/RUN_LOG.txt)
-* Architecture and API diagram (open in excalidraw.com): [`docs/architecture.excalidraw`](docs/architecture.excalidraw)
+* Design note: [`DESIGN.md`](./DESIGN.md)
+* Run log (17 scenarios, generated from real output): [`RUN_LOG.txt`](./RUN_LOG.txt)
 
 ## Run it
 
