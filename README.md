@@ -1,6 +1,5 @@
 
-[Edit architecture diagram](./architecture-diagram.svg)
-
+![System Architecture](./architecture-diagram.svg)
 
 # Sales-to-production intelligence layer
 
