@@ -1,4 +1,9 @@
+
+[Edit architecture diagram](./architecture.excalidraw)
+
+
 # Sales-to-production intelligence layer
+
 
 One intelligence layer across enquiry, quotation, production plan and customer status. It answers from the current
 state of five systems of record, says how fresh its data is and how sure it is, recommends actions that protect a
